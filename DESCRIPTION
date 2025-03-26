@@ -1,0 +1,17 @@
+Package: worldclimmir
+Title: Spider the Files on WorldClim
+Version: 0.0.0.9000
+Authors@R: c(
+ person("Michael", "Sumner", , "mdsumner@gmail.com", role = c("aut", "cre"))
+      )
+Description: Spiders all the files on worldclim <https://geodata.ucdavis.edu/climate/worldclim> and saves in a table.
+License: MIT + file LICENSE
+Encoding: UTF-8
+Language: es
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.3.2
+Imports: 
+    bowerbird,
+    furrr,
+    nanoparquet
+Remotes: ropensci/bowerbird
