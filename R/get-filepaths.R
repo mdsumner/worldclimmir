@@ -22,7 +22,7 @@ src <-
 
 cf <- bowerbird::bb_add(cf, src)
 
-status <- bb_sync(cf, verbose = TRUE, dry_run = TRUE)
+status <- bowerbird::bb_sync(cf, verbose = TRUE, dry_run = TRUE)
 
 
 ## how big is it all
