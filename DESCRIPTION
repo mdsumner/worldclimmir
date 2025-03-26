@@ -15,3 +15,5 @@ Imports:
     furrr,
     nanoparquet
 Remotes: ropensci/bowerbird
+URL: https://github.com/mdsumner/worldclimmir
+BugReports: https://github.com/mdsumner/worldclimmir/issues
