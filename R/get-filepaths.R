@@ -2,11 +2,11 @@
 get_filepaths <- function() {
 ## we aren't downloading
 my_directory <- tempdir()
-cf <- bb_config(local_file_root = my_directory)
+cf <- bowerbird::bb_config(local_file_root = my_directory)
 
 ##https://geodata.ucdavis.edu/climate/worldclim/2_1/base/wc2.1_10m_tmin.zip
 src <-
-  bb_source(
+  bowerbird::bb_source(
     name = "worldclim",
     id = "worldclim-doi",
     description = "WorldClim",
@@ -20,7 +20,7 @@ src <-
     collection_size = 1e10,
     data_group = "climate")
 
-cf <- bb_add(cf, src)
+cf <- bowerbird::bb_add(cf, src)
 
 status <- bb_sync(cf, verbose = TRUE, dry_run = TRUE)
 
