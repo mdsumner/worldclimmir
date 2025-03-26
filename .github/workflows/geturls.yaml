@@ -24,8 +24,10 @@ jobs:
         with:
           use-public-rspm: true
 
+      - uses: r-lib/actions/setup-r-dependencies@v2
+
       - name: Get update list
-        run: Rscript -e 'source("R/get-filepaths.R", echo = TRUE)'
+        run: Rscript -e 'source("R/get-filepaths.R", echo = TRUE); writefile(get_filepaths())'
 
 
 
