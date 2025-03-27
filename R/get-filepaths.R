@@ -31,10 +31,12 @@ allurls <- do.call(rbind, status$files)
 #size <- numeric(length(allurls))
 
 options(parallelly.fork.enable = TRUE, future.rng.onMisuse = "ignore")
-future::plan(future::multicore)
+## fixme put in external call
+  future::plan(future::multicore)
 
-allurls$sizes <- future_map_dbl(allurls$url, \(.url) as.numeric(gdalraster::vsi_stat(sprintf("/vsicurl/%s", .url), "size")))
-plan(sequential)
+allurls$sizes <- furrr::uture_map_dbl(allurls$url, \(.url) as.numeric(gdalraster::vsi_stat(sprintf("/vsicurl/%s", .url), "size")))
+
+  future::plan(sequential)
 #sum(sizes)/1e9
 #[1] 5479.997
 allurls
