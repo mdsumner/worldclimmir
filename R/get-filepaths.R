@@ -31,7 +31,7 @@ allurls <- do.call(rbind, status$files)
 #size <- numeric(length(allurls))
 
 options(parallelly.fork.enable = TRUE, future.rng.onMisuse = "ignore")
-future::plan(multicore)
+future::plan(future::multicore)
 
 allurls$sizes <- future_map_dbl(allurls$url, \(.url) as.numeric(gdalraster::vsi_stat(sprintf("/vsicurl/%s", .url), "size")))
 plan(sequential)
